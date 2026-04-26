@@ -10,6 +10,7 @@ require("config.lazy")
 local builtin = require("telescope.builtin")
 vim.keymap.set('n', '<C-p>', builtin.find_files, {})
 vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
+vim.keymap.set('n', '<leader>o', ':Neotree reveal<CR>', { noremap = true, silent = true, desc = 'Reveal file in Neo-tree' })
 
 require('nvim-treesitter.configs').setup({
   ensure_installed = { 'rust', 'javascript', 'zig', 'python' },
