@@ -9,7 +9,7 @@ return {
   },
   {
     'nvim-treesitter/nvim-treesitter',
-    branch = 'master', -- Add this line to use the legacy branch
+    branch = 'master', 
     lazy = false,
     build = ':TSUpdate'
   },
@@ -19,8 +19,20 @@ return {
     dependencies = {
       "nvim-lua/plenary.nvim",
       "MunifTanjim/nui.nvim",
-      "nvim-tree/nvim-web-devicons", -- optional, but recommended
+      "nvim-tree/nvim-web-devicons", 
     },
-    lazy = false, -- neo-tree will lazily load itself
+    lazy = false, 
   },
+  {
+    'akinsho/toggleterm.nvim',
+    version = "*",
+    config = function()
+      require("toggleterm").setup({
+        size = 20,
+        open_mapping = [[<c-\>]], 
+        shade_terminals = true,
+        direction = 'horizontal',
+      })
+    end
+  }
 }
